@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cache Simulator</title>
+	<link rel="icon" href="icon.png">
+	<link rel="stylesheet" type="text/css" href="vendor/jquery/jquery-ui.min.css" >
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/fontawesome/css/fontawesome-all.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div id="slots_memoria" class="row">
+			<div id="dram"></div>
+			<div id="sram"></div>
+		</div>
+
+		<div id="controls" class="row row-eq-height">
+			<div class="col-xs-4">
+				<div class="item-form padding-top15">
+					<label class="label-item-form">Quantidade de instruções</label>
+					<input type="text" id="qtd_instrucoes" name="qtd_instrucoes" maxlength="10" value="128">
+				</div>
+
+				<div class="item-form display-flex space-between">
+					<input type="button" id="btn_start" class="wh49" name="btn_start" value="START">
+					<input type="button" id="btn_stop" class="wh49" name="btn_start" value="STOP">
+				</div>
+
+				<div class="item-form padding-bottom10">
+					<label id="speed_label" class="label-item-form" data-speed="0">Velocidade<i class="fas fa-info-circle" data-toggle="popover" data-container="body" data-html="true" data-trigger="hover"></i></label>
+				</div>
+
+				<div class="item-form item-form-slider">
+					<div id="speed_slider"></div>
+				</div>
+			</div>
+
+			<div class="col-xs-3">
+				<div class="item-form padding-top15">
+					<label class="label-item-form">Endereço da memória (DRAM)<i class="fas fa-info-circle" data-toggle="popover" data-container="body" data-html="true" data-content="Pode ser representado em inteiro de 0 a 2047 ou em binário." data-trigger="hover"></i></label>
+					<input type="text" id="end_mem" name="end_mem" maxlength="11" value="0">
+				</div>
+
+				<div class="item-form">
+					<label class="label-item-form">Valor<i class="fas fa-info-circle" data-toggle="popover" data-container="body" data-html="true" data-content="A memória tem capacidade de armazenamento de 1 Byte por endereço. Considere essa informação ao informar um valor." data-trigger="hover"></i></label>
+					<input type="text" id="end_valor" name="end_valor" maxlength="3" value="0">
+				</div>
+
+				<div class="item-form display-flex space-between">
+					<input type="button" id="btn_update" class="wh49" name="btn_atualizar" value="ATUALIZAR">
+					<input type="button" id="btn_access" class="wh49" name="btn_access" value="ACESSAR">
+				</div>
+			</div>
+
+			<div class="col-xs-5">
+				<div id="div_log" class="item-form padding-top15">
+					<label class="label-item-form">Log de atividades<i class="fas fa-info-circle" data-toggle="popover" data-container="body" data-html="true" data-trigger="hover"></i></label>
+					<div class="item-form">
+						<div id="log"></div>
+					</div>
+				</div>
+
+				<div class="item-form display-flex space-between">
+					<input type="button" id="btn_relatorio" class="wh59" name="btn_relatorio" value="GERAR RELATÓRIO">
+					<input type="button" id="btn_clear" class="wh29" name="btn_clear" value="ZERAR ESTATÍSTICAS">
+					<button id="btn_settings" class="wh9 fas" name="btn_settings"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="loading">
+		<div class="loader"></div>
+	</div>
+</body>
+</html>
+
+<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="vendor/bootstrap/bootstrap.min.js"></script>
+<script src="vendor/jquery/jquery-ui.min.js"></script>
+<script src="vendor/chart/chart.min.js"></script>
+<script src="script.js"></script>
